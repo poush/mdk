@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, useRef } from 'react'
 import { Button, Space, Typography } from 'antd'
 import { ClockCircleOutlined, CheckOutlined, CloseOutlined } from '@ant-design/icons'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 
 const { Title, Text, Paragraph } = Typography
@@ -16,19 +17,21 @@ const createUserId = () => {
   return `uid-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`
 }
 
-const QUIZ_QUESTION = {
-  category: 'Space & Science',
-  prompt: 'Which planet is known as the Red Planet?',
-  correctAnswer: 'c',
-  options: [
-    { id: 'a', text: 'Venus' },
-    { id: 'b', text: 'Saturn' },
-    { id: 'c', text: 'Mars' },
-    { id: 'd', text: 'Mercury' },
-  ],
-}
-
 function App() {
+  const { t } = useTranslation()
+
+  const QUIZ_QUESTION = {
+    category: t('categories.spaceScience'),
+    prompt: t('questions.redPlanet'),
+    correctAnswer: 'c',
+    options: [
+      { id: 'a', text: t('options.venus') },
+      { id: 'b', text: t('options.saturn') },
+      { id: 'c', text: t('options.mars') },
+      { id: 'd', text: t('options.mercury') },
+    ],
+  }
+
   const [secondsLeft, setSecondsLeft] = useState(TIMER_DURATION)
   const [selectedOption, setSelectedOption] = useState(null)
   const [submitted, setSubmitted] = useState(false)
@@ -158,7 +161,7 @@ function App() {
           <div className="quiz-card">
           {/* Timer Badge */}
           <div className="timer-badge">
-            <Text type="secondary" style={{ fontSize: '13px' }}>Time left:</Text>
+            <Text type="secondary" style={{ fontSize: '13px' }}>{t('timer.timeLeft')}</Text>
             <Text strong style={{ fontSize: '15px', marginLeft: '6px' }}>
               {formatTime(secondsLeft)}
             </Text>
@@ -205,7 +208,7 @@ function App() {
                       className="quick-submit"
                       onClick={handleSubmit}
                     >
-                      Submit
+                      {t('actions.submit')}
                     </Button>
                   )}
                 </div>
@@ -222,7 +225,7 @@ function App() {
               onClick={handleNextQuestion}
               block
             >
-              Next Question
+              {t('actions.nextQuestion')}
             </Button>
           )}
 
@@ -230,13 +233,13 @@ function App() {
           <Paragraph type="secondary" className="helper-text">
             {submitted
               ? isCorrect
-                ? '🎉 Correct! Great job!'
-                : '❌ Incorrect. Better luck next time!'
+                ? t('messages.correct')
+                : t('messages.incorrect')
               : secondsLeft === 0
-              ? '⏱️ Time is up! Select an answer to continue.'
+              ? t('messages.timeUp')
               : selectedOption
-              ? '👆 Click Submit to check your answer'
-              : 'Choose the correct answer'}
+              ? t('messages.clickSubmit')
+              : t('messages.chooseAnswer')}
           </Paragraph>
           </div>
         </div>

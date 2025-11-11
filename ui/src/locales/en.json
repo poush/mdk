@@ -1,0 +1,34 @@
+{
+  "timer": {
+    "timeLeft": "Time left:",
+    "timeRemaining": "Time Remaining"
+  },
+  "quiz": {
+    "dailyQuiz": "DAILY QUIZ",
+    "question": "QUESTION {{number}}",
+    "chooseCorrectAnswer": "Choose the correct answer"
+  },
+  "categories": {
+    "spaceScience": "Space & Science"
+  },
+  "questions": {
+    "redPlanet": "Which planet is known as the Red Planet?"
+  },
+  "options": {
+    "venus": "Venus",
+    "saturn": "Saturn",
+    "mars": "Mars",
+    "mercury": "Mercury"
+  },
+  "actions": {
+    "submit": "Submit",
+    "nextQuestion": "Next Question"
+  },
+  "messages": {
+    "correct": "🎉 Correct! Great job!",
+    "incorrect": "❌ Incorrect. Better luck next time!",
+    "timeUp": "⏱️ Time is up! Select an answer to continue.",
+    "clickSubmit": "👆 Click Submit to check your answer",
+    "chooseAnswer": "Choose the correct answer"
+  }
+}

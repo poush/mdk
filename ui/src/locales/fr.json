@@ -1,0 +1,34 @@
+{
+  "timer": {
+    "timeLeft": "Temps restant :",
+    "timeRemaining": "Temps Restant"
+  },
+  "quiz": {
+    "dailyQuiz": "QUIZ QUOTIDIEN",
+    "question": "QUESTION {{number}}",
+    "chooseCorrectAnswer": "Choisissez la bonne réponse"
+  },
+  "categories": {
+    "spaceScience": "Espace & Science"
+  },
+  "questions": {
+    "redPlanet": "Quelle planète est connue comme la planète rouge ?"
+  },
+  "options": {
+    "venus": "Vénus",
+    "saturn": "Saturne",
+    "mars": "Mars",
+    "mercury": "Mercure"
+  },
+  "actions": {
+    "submit": "Soumettre",
+    "nextQuestion": "Question Suivante"
+  },
+  "messages": {
+    "correct": "🎉 Correct ! Excellent travail !",
+    "incorrect": "❌ Incorrect. Meilleure chance la prochaine fois !",
+    "timeUp": "⏱️ Le temps est écoulé ! Sélectionnez une réponse pour continuer.",
+    "clickSubmit": "👆 Cliquez sur Soumettre pour vérifier votre réponse",
+    "chooseAnswer": "Choisissez la bonne réponse"
+  }
+}
